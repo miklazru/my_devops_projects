@@ -1,0 +1,33 @@
+#ifndef MAIN_H
+#define MAIN_H
+#include <getopt.h>
+#include <regex.h>
+#include <stdio.h>
+#include <string.h>
+
+#define LEN 1024
+
+typedef struct {
+  int e;
+  int i;
+  int v;
+  int c;
+  int l;
+  int n;
+  int h;
+  int s;
+  int o;
+  int f;
+} options;
+
+void processing(int *count_files, char **argv, int var, options *flags,
+                char *pattern);
+void mini_output(int *count_files, char **argv, char *line, int number_str,
+                 int i_of_argv, char *pattern, options *flag);
+void f(char *fileName, char *pattern, options *flags);
+void c(int *count_files, char *name_file, int count_for_c, options *flags);
+void o(char *line, char *pattern, options *flags);
+void parser(int argc, char **argv, options *flags, char *e_patterns,
+            char *f_pattern);
+#endif
+
