@@ -17,5 +17,8 @@ $(OBJ): $(SRC) $(HFILE)
 clean:
 	rm -rf *.0 $(EXECUTABLE)
 
+test: $(EXECUTABLE)
+	./tests.sh
+
 rebuild: make clean
 	make all
